@@ -10,7 +10,31 @@ export declare const ERROR_CODES: {
   readonly SERVICE_UNAVAILABLE: "SERVICE_UNAVAILABLE";
   readonly DATABASE_ERROR: "DATABASE_ERROR";
   readonly REDIS_ERROR: "REDIS_ERROR";
+  readonly INVITATION_EXPIRED: "INVITATION_EXPIRED";
+  readonly INVITATION_REVOKED: "INVITATION_REVOKED";
 };
+
+export declare const ORG_ROLES: {
+  readonly OWNER: "owner";
+  readonly ADMIN: "admin";
+  readonly INTERVIEWER: "interviewer";
+};
+export type OrgRole = (typeof ORG_ROLES)[keyof typeof ORG_ROLES];
+
+export declare const INVITATION_STATUS: {
+  readonly PENDING: "pending";
+  readonly ACCEPTED: "accepted";
+  readonly REVOKED: "revoked";
+  readonly EXPIRED: "expired";
+};
+export type InvitationStatus =
+  (typeof INVITATION_STATUS)[keyof typeof INVITATION_STATUS];
+
+export declare const USER_STATUS: {
+  readonly ACTIVE: "active";
+  readonly DISABLED: "disabled";
+};
+export type UserStatus = (typeof USER_STATUS)[keyof typeof USER_STATUS];
 
 export type ErrorCode = (typeof ERROR_CODES)[keyof typeof ERROR_CODES];
 

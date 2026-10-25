@@ -13,6 +13,35 @@ export const ERROR_CODES = Object.freeze({
   SERVICE_UNAVAILABLE: "SERVICE_UNAVAILABLE",
   DATABASE_ERROR: "DATABASE_ERROR",
   REDIS_ERROR: "REDIS_ERROR",
+  INVITATION_EXPIRED: "INVITATION_EXPIRED",
+  INVITATION_REVOKED: "INVITATION_REVOKED",
+});
+
+/**
+ * Organization membership roles.
+ */
+export const ORG_ROLES = Object.freeze({
+  OWNER: "owner",
+  ADMIN: "admin",
+  INTERVIEWER: "interviewer",
+});
+
+/**
+ * Invitation lifecycle statuses.
+ */
+export const INVITATION_STATUS = Object.freeze({
+  PENDING: "pending",
+  ACCEPTED: "accepted",
+  REVOKED: "revoked",
+  EXPIRED: "expired",
+});
+
+/**
+ * User account statuses.
+ */
+export const USER_STATUS = Object.freeze({
+  ACTIVE: "active",
+  DISABLED: "disabled",
 });
 
 /**

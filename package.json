@@ -22,5 +22,8 @@
   "devDependencies": {
     "concurrently": "^9.1.2",
     "prettier": "^3.5.1"
+  },
+  "allowScripts": {
+    "argon2@0.45.1": true
   }
 }
