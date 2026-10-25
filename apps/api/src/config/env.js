@@ -213,7 +213,8 @@ try {
     COOKIE_SAMESITE: (process.env.COOKIE_SAMESITE || "lax").toLowerCase(),
     COOKIE_SECURE: process.env.COOKIE_SECURE === "true",
     COOKIE_DOMAIN: process.env.COOKIE_DOMAIN || "",
-    REQUIRE_EMAIL_VERIFICATION: process.env.REQUIRE_EMAIL_VERIFICATION === "true",
+    REQUIRE_EMAIL_VERIFICATION:
+      process.env.REQUIRE_EMAIL_VERIFICATION === "true",
     INVITATION_EXPIRES_DAYS: parseInt(
       process.env.INVITATION_EXPIRES_DAYS || "7",
       10,

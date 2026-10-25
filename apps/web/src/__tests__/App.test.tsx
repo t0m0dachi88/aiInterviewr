@@ -53,10 +53,11 @@ describe("Frontend Application Foundation", () => {
   it("renders application navigation and brand title", () => {
     render(<App />);
     expect(screen.getByText("HirePulse")).toBeInTheDocument();
-    expect(screen.getByText("Phase 0")).toBeInTheDocument();
+    expect(screen.getByText("Phase 1")).toBeInTheDocument();
     expect(screen.getByText("Overview")).toBeInTheDocument();
     expect(screen.getByText("Dashboard")).toBeInTheDocument();
     expect(screen.getByText("Status")).toBeInTheDocument();
+    expect(screen.getByText("Sign In")).toBeInTheDocument();
   });
 
   it("renders platform overview headline on home route", () => {

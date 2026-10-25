@@ -5,10 +5,7 @@ import { withTransaction } from "../../utils/transaction.js";
 import { User } from "../auth/user.model.js";
 import { Organization } from "./organization.model.js";
 import { OrganizationMembership } from "./membership.model.js";
-import {
-  assertCanChangeRole,
-  assertCanRemoveMember,
-} from "./permissions.js";
+import { assertCanChangeRole, assertCanRemoveMember } from "./permissions.js";
 import { serializeMembership } from "./organization.serializer.js";
 
 function notFound() {

@@ -45,9 +45,6 @@ const userSchema = new mongoose.Schema(
   },
 );
 
-userSchema.index({ email: 1 }, { unique: true });
-userSchema.index({ status: 1 });
-
 userSchema.set("toJSON", {
   transform(_doc, ret) {
     delete ret.passwordHash;
@@ -56,5 +53,4 @@ userSchema.set("toJSON", {
   },
 });
 
-export const User =
-  mongoose.models.User || mongoose.model("User", userSchema);
+export const User = mongoose.models.User || mongoose.model("User", userSchema);

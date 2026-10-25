@@ -41,9 +41,6 @@ const organizationSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-organizationSchema.index({ slug: 1 }, { unique: true });
-organizationSchema.index({ ownerUserId: 1 });
-
 export const Organization =
   mongoose.models.Organization ||
   mongoose.model("Organization", organizationSchema);

@@ -32,10 +32,10 @@ export async function sendEmail(message) {
   if (!isConfigured()) {
     if (!env.isProduction && env.LOG_LEVEL !== "silent") {
       // eslint-disable-next-line no-console
-      console.info(
-        "[email] Provider not configured. Message was not sent.",
-        { to: message.to, subject: message.subject },
-      );
+      console.info("[email] Provider not configured. Message was not sent.", {
+        to: message.to,
+        subject: message.subject,
+      });
     }
     return { delivered: false, reason: "email_provider_not_configured" };
   }

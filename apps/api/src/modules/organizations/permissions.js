@@ -112,11 +112,7 @@ export function assertCanChangeRole({
  * - Admins cannot remove owners.
  * - The last owner cannot be removed.
  */
-export function assertCanRemoveMember({
-  actorRole,
-  targetRole,
-  ownerCount,
-}) {
+export function assertCanRemoveMember({ actorRole, targetRole, ownerCount }) {
   if (actorRole === ORG_ROLES.INTERVIEWER) {
     throw new AppError(
       "You are not allowed to perform this action",

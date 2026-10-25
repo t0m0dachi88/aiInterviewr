@@ -103,8 +103,9 @@ export const OrganizationController = {
   }),
 
   acceptInvitation: asyncHandler(async (req, res) => {
+    const token = req.validated?.token || req.params?.token || req.body?.token;
     const result = await InvitationService.acceptInvitation({
-      token: req.validated.token,
+      token,
       user: req.user,
     });
     return sendSuccess(res, result);
