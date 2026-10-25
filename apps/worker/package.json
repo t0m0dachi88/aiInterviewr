@@ -1,0 +1,21 @@
+{
+  "name": "@platform/worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint . --max-warnings=0"
+  },
+  "dependencies": {
+    "@platform/shared": "*",
+    "dotenv": "^16.4.7",
+    "ioredis": "^5.4.2"
+  },
+  "devDependencies": {
+    "vitest": "^3.0.7"
+  }
+}

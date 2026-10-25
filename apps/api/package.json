@@ -1,0 +1,28 @@
+{
+  "name": "@platform/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint . --max-warnings=0"
+  },
+  "dependencies": {
+    "@platform/shared": "*",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "ioredis": "^5.4.2",
+    "mongoose": "^8.9.5",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.20.1",
+    "supertest": "^7.0.0",
+    "vitest": "^3.0.7"
+  }
+}
