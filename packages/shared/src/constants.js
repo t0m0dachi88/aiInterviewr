@@ -15,6 +15,15 @@ export const ERROR_CODES = Object.freeze({
   REDIS_ERROR: "REDIS_ERROR",
   INVITATION_EXPIRED: "INVITATION_EXPIRED",
   INVITATION_REVOKED: "INVITATION_REVOKED",
+  INTERVIEW_NOT_FOUND: "INTERVIEW_NOT_FOUND",
+  QUESTION_NOT_FOUND: "QUESTION_NOT_FOUND",
+  ASSESSMENT_NOT_FOUND: "ASSESSMENT_NOT_FOUND",
+  INVALID_STATUS_TRANSITION: "INVALID_STATUS_TRANSITION",
+  CANDIDATE_INVITATION_NOT_FOUND: "CANDIDATE_INVITATION_NOT_FOUND",
+  CANDIDATE_INVITATION_EXPIRED: "CANDIDATE_INVITATION_EXPIRED",
+  CANDIDATE_INVITATION_REVOKED: "CANDIDATE_INVITATION_REVOKED",
+  CANDIDATE_INVITATION_ALREADY_RESOLVED: "CANDIDATE_INVITATION_ALREADY_RESOLVED",
+  EMAIL_MISMATCH: "EMAIL_MISMATCH",
 });
 
 /**
@@ -61,8 +70,55 @@ export const INTERVIEW_STATUS = Object.freeze({
   SCHEDULED: "scheduled",
   WAITING: "waiting",
   LIVE: "live",
+  IN_PROGRESS: "in_progress",
   COMPLETED: "completed",
   CANCELLED: "cancelled",
+});
+
+/**
+ * Question categories.
+ */
+export const QUESTION_CATEGORIES = Object.freeze([
+  { id: "data_structures_and_algorithms", label: "Data Structures & Algorithms" },
+  { id: "backend_engineering", label: "Backend Engineering" },
+  { id: "frontend_engineering", label: "Frontend Engineering" },
+  { id: "databases", label: "Databases" },
+  { id: "system_design", label: "System Design" },
+  { id: "debugging", label: "Debugging" },
+  { id: "programming_fundamentals", label: "Programming Fundamentals" },
+]);
+
+export const QUESTION_DIFFICULTY = Object.freeze({
+  EASY: "easy",
+  MEDIUM: "medium",
+  HARD: "hard",
+});
+
+export const QUESTION_TYPE = Object.freeze({
+  CODING: "coding",
+  DEBUGGING: "debugging",
+  SYSTEM_DESIGN: "system_design",
+  CONCEPTUAL: "conceptual",
+});
+
+export const QUESTION_STATUS = Object.freeze({
+  ACTIVE: "active",
+  ARCHIVED: "archived",
+});
+
+export const INTERVIEW_TYPE = Object.freeze({
+  TECHNICAL: "technical",
+  SYSTEM_DESIGN: "system_design",
+  CODING: "coding",
+  SCREENING: "screening",
+});
+
+export const CANDIDATE_INVITATION_STATUS = Object.freeze({
+  PENDING: "pending",
+  ACCEPTED: "accepted",
+  DECLINED: "declined",
+  REVOKED: "revoked",
+  EXPIRED: "expired",
 });
 
 /**

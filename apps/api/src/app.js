@@ -11,6 +11,8 @@ import healthRoutes from "./modules/health/health.routes.js";
 import authRoutes from "./modules/auth/auth.routes.js";
 import organizationRoutes from "./modules/organizations/organization.routes.js";
 import invitationRoutes from "./modules/organizations/invitation.routes.js";
+import questionRoutes from "./modules/questions/question.routes.js";
+import assessmentRoutes from "./modules/assessments/assessment.routes.js";
 
 /**
  * Initialize Express application.
@@ -59,6 +61,11 @@ export function createApp() {
   app.use("/api/v1/auth", authRoutes);
   app.use("/api/v1/organizations", organizationRoutes);
   app.use("/api/v1/invitations", invitationRoutes);
+  app.use("/api/v1/organizations/:organizationId/questions", questionRoutes);
+  app.use(
+    "/api/v1/organizations/:organizationId/assessments",
+    assessmentRoutes,
+  );
 
   // 404 handler
   app.use(notFoundMiddleware);
