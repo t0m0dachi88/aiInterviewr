@@ -15,7 +15,6 @@ const sessionSchema = new mongoose.Schema(
     tokenHash: {
       type: String,
       required: true,
-      unique: true,
     },
     familyId: {
       type: String,

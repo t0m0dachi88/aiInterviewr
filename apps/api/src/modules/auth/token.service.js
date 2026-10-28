@@ -96,6 +96,17 @@ export function hashInvitationToken(token) {
     .digest("hex");
 }
 
+export function generateCandidateToken() {
+  return crypto.randomBytes(32).toString("base64url");
+}
+
+export function hashCandidateToken(token) {
+  return crypto
+    .createHmac("sha256", getRefreshPepper())
+    .update(`candidate:${token}`)
+    .digest("hex");
+}
+
 export function getRefreshExpiryDate() {
   const days = Number.isFinite(env.REFRESH_TOKEN_EXPIRES_DAYS)
     ? env.REFRESH_TOKEN_EXPIRES_DAYS

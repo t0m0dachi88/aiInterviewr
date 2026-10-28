@@ -93,7 +93,10 @@ export async function listOrganizationsForUser(userId) {
   );
 
   return organizations.map((organization) =>
-    serializeOrganization(organization, roleByOrg.get(String(organization._id))),
+    serializeOrganization(
+      organization,
+      roleByOrg.get(String(organization._id)),
+    ),
   );
 }
 

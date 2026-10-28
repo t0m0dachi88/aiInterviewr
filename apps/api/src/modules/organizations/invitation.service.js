@@ -11,10 +11,7 @@ import {
   generateInvitationToken,
   hashInvitationToken,
 } from "../auth/token.service.js";
-import {
-  buildInvitationEmail,
-  sendEmail,
-} from "../email/email.service.js";
+import { buildInvitationEmail, sendEmail } from "../email/email.service.js";
 import { serializeInvitation } from "./organization.serializer.js";
 import { serializeMembership } from "./organization.serializer.js";
 
@@ -278,9 +275,7 @@ export async function acceptInvitation({ token, user }) {
     invitation.acceptedAt = new Date();
     await invitation.save({ session });
 
-    const organization = await Organization.findById(
-      invitation.organizationId,
-    )
+    const organization = await Organization.findById(invitation.organizationId)
       .session(session)
       .lean();
     const memberUser = await User.findById(user.id).session(session).lean();

@@ -22,7 +22,6 @@ const invitationSchema = new mongoose.Schema(
     tokenHash: {
       type: String,
       required: true,
-      unique: true,
     },
     invitedBy: {
       type: mongoose.Schema.Types.ObjectId,

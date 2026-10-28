@@ -95,6 +95,15 @@ export const validators = {
   organizationName(value) {
     return isNonEmptyString(value, "Organization name", { min: 2, max: 80 });
   },
+  optionalOrganizationName(value) {
+    if (value === undefined || value === null) {
+      return { value: undefined };
+    }
+    return isNonEmptyString(value, "Organization name", { min: 2, max: 80 });
+  },
+  membershipId(value) {
+    return isNonEmptyString(value, "Membership ID", { min: 1, max: 64 });
+  },
   optionalSlug(value) {
     if (value === undefined || value === null || value === "") {
       return { value: undefined };
@@ -105,8 +114,7 @@ export const validators = {
     const slug = value.trim().toLowerCase();
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug) || slug.length > 60) {
       return {
-        error:
-          "Slug may contain lowercase letters, numbers, and hyphens only",
+        error: "Slug may contain lowercase letters, numbers, and hyphens only",
       };
     }
     return { value: slug };

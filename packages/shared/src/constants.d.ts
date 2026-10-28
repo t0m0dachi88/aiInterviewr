@@ -12,6 +12,15 @@ export declare const ERROR_CODES: {
   readonly REDIS_ERROR: "REDIS_ERROR";
   readonly INVITATION_EXPIRED: "INVITATION_EXPIRED";
   readonly INVITATION_REVOKED: "INVITATION_REVOKED";
+  readonly INTERVIEW_NOT_FOUND: "INTERVIEW_NOT_FOUND";
+  readonly QUESTION_NOT_FOUND: "QUESTION_NOT_FOUND";
+  readonly ASSESSMENT_NOT_FOUND: "ASSESSMENT_NOT_FOUND";
+  readonly INVALID_STATUS_TRANSITION: "INVALID_STATUS_TRANSITION";
+  readonly CANDIDATE_INVITATION_NOT_FOUND: "CANDIDATE_INVITATION_NOT_FOUND";
+  readonly CANDIDATE_INVITATION_EXPIRED: "CANDIDATE_INVITATION_EXPIRED";
+  readonly CANDIDATE_INVITATION_REVOKED: "CANDIDATE_INVITATION_REVOKED";
+  readonly CANDIDATE_INVITATION_ALREADY_RESOLVED: "CANDIDATE_INVITATION_ALREADY_RESOLVED";
+  readonly EMAIL_MISMATCH: "EMAIL_MISMATCH";
 };
 
 export declare const ORG_ROLES: {
@@ -50,6 +59,7 @@ export declare const INTERVIEW_STATUS: {
   readonly SCHEDULED: "scheduled";
   readonly WAITING: "waiting";
   readonly LIVE: "live";
+  readonly IN_PROGRESS: "in_progress";
   readonly COMPLETED: "completed";
   readonly CANCELLED: "cancelled";
 };
@@ -69,3 +79,49 @@ export declare const EXECUTION_STATUS: {
 };
 export type ExecutionStatus =
   (typeof EXECUTION_STATUS)[keyof typeof EXECUTION_STATUS];
+
+export declare const QUESTION_CATEGORIES: readonly {
+  readonly id: string;
+  readonly label: string;
+}[];
+
+export declare const QUESTION_DIFFICULTY: {
+  readonly EASY: "easy";
+  readonly MEDIUM: "medium";
+  readonly HARD: "hard";
+};
+export type QuestionDifficulty =
+  (typeof QUESTION_DIFFICULTY)[keyof typeof QUESTION_DIFFICULTY];
+
+export declare const QUESTION_TYPE: {
+  readonly CODING: "coding";
+  readonly DEBUGGING: "debugging";
+  readonly SYSTEM_DESIGN: "system_design";
+  readonly CONCEPTUAL: "conceptual";
+};
+export type QuestionType = (typeof QUESTION_TYPE)[keyof typeof QUESTION_TYPE];
+
+export declare const QUESTION_STATUS: {
+  readonly ACTIVE: "active";
+  readonly ARCHIVED: "archived";
+};
+export type QuestionStatus =
+  (typeof QUESTION_STATUS)[keyof typeof QUESTION_STATUS];
+
+export declare const INTERVIEW_TYPE: {
+  readonly TECHNICAL: "technical";
+  readonly SYSTEM_DESIGN: "system_design";
+  readonly CODING: "coding";
+  readonly SCREENING: "screening";
+};
+export type InterviewType = (typeof INTERVIEW_TYPE)[keyof typeof INTERVIEW_TYPE];
+
+export declare const CANDIDATE_INVITATION_STATUS: {
+  readonly PENDING: "pending";
+  readonly ACCEPTED: "accepted";
+  readonly DECLINED: "declined";
+  readonly REVOKED: "revoked";
+  readonly EXPIRED: "expired";
+};
+export type CandidateInvitationStatus =
+  (typeof CANDIDATE_INVITATION_STATUS)[keyof typeof CANDIDATE_INVITATION_STATUS];

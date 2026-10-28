@@ -1,6 +1,9 @@
 import { Router } from "express";
 import { AuthController } from "./auth.controller.js";
-import { validateBody, validators } from "../../middleware/validate.middleware.js";
+import {
+  validateBody,
+  validators,
+} from "../../middleware/validate.middleware.js";
 import { authenticate } from "../../middleware/authenticate.middleware.js";
 import { csrfProtection } from "../../middleware/csrf.middleware.js";
 import { authRateLimit } from "../../middleware/rate-limit.middleware.js";

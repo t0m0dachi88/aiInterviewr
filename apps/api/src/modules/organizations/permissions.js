@@ -9,6 +9,13 @@ export const PERMISSIONS = Object.freeze({
   MEMBER_CHANGE_ROLE: "member:change_role",
   MEMBER_REMOVE: "member:remove",
   OWNERSHIP_TRANSFER: "ownership:transfer",
+  QUESTION_VIEW: "question:view",
+  QUESTION_MANAGE: "question:manage",
+  ASSESSMENT_VIEW: "assessment:view",
+  ASSESSMENT_MANAGE: "assessment:manage",
+  INTERVIEW_VIEW: "interview:view",
+  INTERVIEW_MANAGE: "interview:manage",
+  CANDIDATE_INVITE: "candidate:invite",
 });
 
 const ROLE_PERMISSIONS = Object.freeze({
@@ -20,10 +27,24 @@ const ROLE_PERMISSIONS = Object.freeze({
     PERMISSIONS.MEMBER_INVITE,
     PERMISSIONS.MEMBER_CHANGE_ROLE,
     PERMISSIONS.MEMBER_REMOVE,
+    PERMISSIONS.QUESTION_VIEW,
+    PERMISSIONS.QUESTION_MANAGE,
+    PERMISSIONS.ASSESSMENT_VIEW,
+    PERMISSIONS.ASSESSMENT_MANAGE,
+    PERMISSIONS.INTERVIEW_VIEW,
+    PERMISSIONS.INTERVIEW_MANAGE,
+    PERMISSIONS.CANDIDATE_INVITE,
   ]),
   [ORG_ROLES.INTERVIEWER]: new Set([
     PERMISSIONS.ORGANIZATION_VIEW,
     PERMISSIONS.MEMBER_VIEW,
+    PERMISSIONS.QUESTION_VIEW,
+    PERMISSIONS.QUESTION_MANAGE,
+    PERMISSIONS.ASSESSMENT_VIEW,
+    PERMISSIONS.ASSESSMENT_MANAGE,
+    PERMISSIONS.INTERVIEW_VIEW,
+    PERMISSIONS.INTERVIEW_MANAGE,
+    PERMISSIONS.CANDIDATE_INVITE,
   ]),
 });
 
@@ -112,11 +133,7 @@ export function assertCanChangeRole({
  * - Admins cannot remove owners.
  * - The last owner cannot be removed.
  */
-export function assertCanRemoveMember({
-  actorRole,
-  targetRole,
-  ownerCount,
-}) {
+export function assertCanRemoveMember({ actorRole, targetRole, ownerCount }) {
   if (actorRole === ORG_ROLES.INTERVIEWER) {
     throw new AppError(
       "You are not allowed to perform this action",
